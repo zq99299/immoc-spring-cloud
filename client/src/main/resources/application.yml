@@ -1,0 +1,12 @@
+eureka:
+  instance:
+    hostname: localhost # 使用域名代替ip 效果 http://localhost:8762，可以是任意域名，但是本机不配置映射是不能访问的
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/
+server:
+  port: 9000
+
+spring:
+  application:
+    name: client
