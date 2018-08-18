@@ -1,0 +1,23 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: order
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/imooc_spring_cloud_sell?useUnicode=yes&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: 123456
+  jpa:
+    show-sql: true
+  rabbitmq:
+    host: 192.168.106.128
+    port: 5672
+    username: guest
+    password: guest
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
