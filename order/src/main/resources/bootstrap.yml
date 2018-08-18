@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: order
+  cloud:
+    config:
+      discovery:
+        enabled: true  # 配置发现打开，默认是关闭的
+        service-id: config-server # config-server 项目的 spring.application.name
+      profile: dev  # 环境 spring.application.name + 这里的profile 组成一个之前服务端提供的获取地址参数
