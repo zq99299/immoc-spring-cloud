@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 public class MqReceiver {
-//    @RabbitListener(queues = "myQueue")
+    //    @RabbitListener(queues = "myQueue")
 //    //当队列不存在的时候，自动创建队列
 //    @RabbitListener(queuesToDeclare = @Queue("myQueue"))
     @RabbitListener(bindings = @QueueBinding(
@@ -24,5 +24,14 @@ public class MqReceiver {
     ))
     public void process(String message) {
         log.info("接收到消息 myQueue：{}", message);
+    }
+
+    @RabbitListener(bindings = @QueueBinding(
+            exchange = @Exchange("myExchange"),
+            key = "computer",
+            value = @Queue("computerOrderQueue")
+    ))
+    public void computerProcess(String message) {
+        log.info("接收到消息 computerOrderQueue：{}", message);
     }
 }
