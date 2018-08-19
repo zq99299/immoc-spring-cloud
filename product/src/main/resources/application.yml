@@ -11,6 +11,11 @@ spring:
 #  jackson:
 #    date-format: yyyy-MM-dd HH:mm:ss
 #    time-zone: GMT+8
+  rabbitmq:
+    host: 192.168.106.128
+    port: 5672
+    username: guest
+    password: guest
 eureka:
   instance:
     hostname: localhost

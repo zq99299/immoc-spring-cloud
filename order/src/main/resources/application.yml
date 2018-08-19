@@ -15,6 +15,14 @@ spring:
     port: 5672
     username: guest
     password: guest
+  cloud:
+    stream:
+      bindings:
+        myMessage:
+          group: order
+        myPerson:
+          group: orderPerson
+          content
 eureka:
   instance:
     hostname: localhost
