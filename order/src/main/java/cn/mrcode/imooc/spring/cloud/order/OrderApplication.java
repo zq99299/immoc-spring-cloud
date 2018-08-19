@@ -2,6 +2,7 @@ package cn.mrcode.imooc.spring.cloud.order;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.cloud.client.SpringCloudApplication;
+import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 //@SpringBootApplication
@@ -9,6 +10,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableFeignClients
 //@EnableCircuitBreaker  // 断路器
 @SpringCloudApplication // 自带 @SpringBootApplication  @EnableDiscoveryClient @EnableCircuitBreaker
+@EnableHystrixDashboard
 public class OrderApplication {
 
     public static void main(String[] args) {
