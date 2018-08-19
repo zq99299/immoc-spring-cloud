@@ -59,6 +59,14 @@ public class HystrixController {
         return result;
     }
 
+    @HystrixCommand
+    @GetMapping("/product/list3")
+    public String test3() throws InterruptedException {
+        TimeUnit.SECONDS.sleep(2);
+        String result = restTemplate.getForObject("http://127.0.0.1:8080/product/list", String.class);
+        return result;
+    }
+
     private String fallback() {
         return "太拥挤了，请稍后再试";
     }
