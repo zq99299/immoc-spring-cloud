@@ -22,7 +22,6 @@ spring:
           group: order
         myPerson:
           group: orderPerson
-          content
 eureka:
   instance:
     hostname: localhost

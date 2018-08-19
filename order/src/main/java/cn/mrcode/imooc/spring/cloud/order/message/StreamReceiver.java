@@ -3,7 +3,6 @@ package cn.mrcode.imooc.spring.cloud.order.message;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.StreamListener;
-import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Component;
 
 /**
@@ -24,9 +23,9 @@ public class StreamReceiver {
     public void process(Person person) {
         log.info("StreamListener process message person {}", person);
     }
-
-    @StreamListener(StreamClient.PERSON_INPUT)
-    @SendTo(StreamClient.INPUT)
+// 不能多个处理方法绑定同一个队列
+//    @StreamListener(StreamClient.PERSON_INPUT)
+//    @SendTo(StreamClient.INPUT)
     public String processAndReply(Person person) {
         log.info("StreamListener process message person {}", person);
         return "ok";

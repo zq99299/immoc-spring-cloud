@@ -7,7 +7,6 @@ import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 /**
@@ -17,7 +16,7 @@ import org.springframework.web.client.RestTemplate;
  * @date : 2018/8/16 22:12
  */
 @RequestMapping("/test")
-@RestController
+//@RestController  // 这里定义的会影响其他地方使用RestTemplate。可以先注释掉
 public class DemoClientController {
     @GetMapping("/word1")
     public String word1() {
