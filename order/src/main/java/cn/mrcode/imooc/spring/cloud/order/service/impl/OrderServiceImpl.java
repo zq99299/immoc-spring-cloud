@@ -43,6 +43,8 @@ public class OrderServiceImpl implements OrderService {
         // TODO: 2018/8/16 查询商品信息（调用商品服务）
         List<String> pids = orderDTO.getOrderDetailList().stream().map(OrderDetail::getProductId).collect(Collectors.toList());
         List<ProductInfo> productInfos = productClient.listForOrder(pids);
+        // 为了掩饰服务追踪，在该方法中特意再调用了其他的服务
+        String list = productClient.list();
         // TODO: 2018/8/16  计算总价
         // TODO: 2018/8/16  扣库存（调用商品服务）
 

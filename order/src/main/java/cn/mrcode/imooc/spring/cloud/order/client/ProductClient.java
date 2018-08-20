@@ -2,6 +2,7 @@ package cn.mrcode.imooc.spring.cloud.order.client;
 
 import cn.mrcode.imooc.spring.cloud.order.dataobject.ProductInfo;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
@@ -13,6 +14,11 @@ import java.util.List;
  */
 @FeignClient(name = "product")
 public interface ProductClient {
-    @PostMapping("/listForOrder")
+    @PostMapping("/product/listForOrder")
     List<ProductInfo> listForOrder(List<String> productIdList);
+
+    @GetMapping("/product/list")
+    String list();
+
+
 }

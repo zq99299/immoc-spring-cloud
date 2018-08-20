@@ -31,7 +31,7 @@ public class ProductController {
      * 3. 构造数据，程序中进行数据的组装
      */
     @GetMapping("/list")
-    public ResultVO list() {
+    public ResultVO list() throws InterruptedException {
         // 获取商品
         List<ProductInfo> productInfoList = productService.findUpAll();
         // 获取商品中包含的类目
